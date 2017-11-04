@@ -3,21 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" type="text/css">
     <title>Application Page</title>
   </head>
   <h1>file test build</h1>
   <body>
-    <p><form action="index.html">
-      <form action="index.html" method="post">
-        <input type="file" name="resumeFile", accept=".pdf, .doc"/>
-      </form></p>
-      <p>First Name:<br>
-      <input type="text" name="firstName" value=""><br>
+    <form action="index.html">
+      Resume:<br>
+      <input type="file" name="resumeFile", accept=".pdf, .doc"/><br>
+      First Name:<br>
+      <input placeholder="First" type="text" name="firstname"><br>
       Last Name:<br>
-      <input type="text" name="lastName" value=""><br>
+      <input placeholder="Last" type="text" name="lastname"><br>
       Email:<br>
-      <input type="text" name="email" value=""><br>
+      <input placeholder="Your Email" type="text" name="email"><br>
       </p>
       <input type="submit" value="Submit">
     </form>
