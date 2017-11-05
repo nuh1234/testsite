@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
+
+<?php include('sendForm.php'); ?>
+<link rel="stylesheet" href="main.css" type="text/css">
+<div class="container">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css" type="text/css">
     <title>Application Page</title>
   </head>
-  <h1>file test build</h1>
+  <h1>file test build3</h1>
   <body>
     <form action="index.html">
       Resume:<br>
@@ -21,4 +22,4 @@
       <input type="submit" value="Submit">
     </form>
   </body>
-</html>
+</div>
