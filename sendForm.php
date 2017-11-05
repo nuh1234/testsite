@@ -8,8 +8,10 @@ $lastname = "";
 $email = "";
 $file = "";
 $success = "";
+
 //Send email
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  print($_POST);
   # code...
   if (empty($_POST["firstname"])) {
     $firstname_error = "Enter your firstname";

@@ -1,18 +1,41 @@
-body {
-  background-color: #D3D3D3
-  margin: 0;
-  padding: 0;
-}
-header {
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  font-family: cursive;
-  font-size: 0.5em;
-  color: #FFFFFF;
-  text-align: center;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
 }
 
-h1 {
-  margin-top: 0;
+body {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	font-size: 12px;
+	line-height:30px;
+	color:#FFFFFF;
+	background:#0072c6;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: #ff9966;
+    text-align: center;
+    font-weight: bold;
+    font-size: 41px;
+}
+
+.container {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
 }
