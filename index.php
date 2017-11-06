@@ -17,13 +17,18 @@
         <span class="underline"></span><br>
         <span class="error"><?= $lastname_error ?></span></p>
         <p>
+        <input class= "input" placeholder="Phone ex: (555)-555-5555" type="text" name="phonenumber" value="<?= $phonenumber ?>">
+        <span class="underline"></span><br>
+        <span class="error"><?= $phonenumber_error ?></span></p>
+        <p>
+        <p>
         <input class= "input" placeholder="Your Email" type="text" name="email" value="<?= $email ?>">
         <span class="underline"></span><br>
         <span class="error"><?= $email_error ?></span></p>
         <p>
           <input type="file" name="resumeFile", accept=".pdf, .doc" value="<?= $file ?>"><br>
           <span class="error"><?= $file_error ?></span></p>
-          <input type="submit" value="Apply">
+          <input type="submit" value="Apply" id="submitHover">
         <p>
         <div class="success"><?= $success ?></div></p>
       </div>
