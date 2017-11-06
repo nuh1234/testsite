@@ -11,15 +11,15 @@ $success = "";
 
 //Send email
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  print($_POST);
+  print_r($_POST);
   # code...
   if (empty($_POST["firstname"])) {
     $firstname_error = "Enter your firstname";
   }else {
     $firstname = test_input($_POST["firstname"]);
      //if this data isn't letters
-    if (!preg_match("/^[a-zA-Z]*$/",$firstname)) {
-      $firstname_error = "Your first name please";
+    if (!preg_match("/^[a-zA-Z]+$/",$firstname)) {
+      $firstname_error = "Only letters :)";
     }
   }
   if (empty($_POST["lastname"])) {
@@ -27,19 +27,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }else {
     $lastname = test_input($_POST["lastname"]);
     //if this data isn't letters
-    if (!preg_match("/^[a-zA-Z]*$/",$lastname)) {
-      $lastname_error = "Your last name please";
+    if (!preg_match("/^[a-zA-Z]+$/",$lastname)) {
+      $lastname_error = "Only letters :)";
     }
   }
   if (empty($_POST["email"])) {
-    $lastname_error = "Enter a valid email address";
+    $email_error = "Enter a valid email address";
   }else {
     $email = test_input($_POST["email"]);
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $email_error = "Invalid Email";
     }
   }
-  if (firstname_error == "" and lastname_error == "" and email_error == "") {
+  if (empty($_POST["resumeFile"])) {
+    $file_error = "Please include your (.doc .pdf) resume";
+
+  }else {
+    $file = test_input($_POST["resumeFile"]);
+  }
+  if ($firstname_error == "" and $lastname_error == "" and $email_error == "" and $file_error == "") {
     $message = '';
     unset($_POST['submit']);
     foreach ($_POST as $key => $value) {
