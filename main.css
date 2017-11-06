@@ -1,25 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
-* {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-font-smoothing:antialiased;
-	-moz-font-smoothing:antialiased;
-	-o-font-smoothing:antialiased;
-	font-smoothing:antialiased;
-	text-rendering:optimizeLegibility;
-}
-
-body {
-	font-family:"Open Sans", Helvetica, Arial, sans-serif;
-	font-weight:300;
-	font-size: 12px;
-	line-height:30px;
-	color:#FFFFFF;
-	background:#0072c6;
+html, body {
+	font-family: "Arial";
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+	color:#000;
+	background-color: white;
 }
 
 .error {
@@ -34,8 +21,52 @@ body {
 }
 
 .container {
-	max-width:400px;
+  background-color: #D3D3D3;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+	max-width: 50%;
 	width:100%;
-	margin:0 auto;
-	position:relative;
+	margin: auto;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+  font-family: "Arial";
+  font-size: 18px;
+  height: 50px;
+  padding: 10px 0px;
+  position: relative;
+  max-width: 50%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #0072c6;
+}
+
+.input:focus+.underline {
+  transform: scale(1);
+}
+.underline {
+  background-color: white;
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 3.9s linear;
+  transition: all 0.2s linear;
+  max-width: 50%;
 }

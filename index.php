@@ -9,21 +9,23 @@
   </head>
   <form id="contact" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <h1>testing file input build</h1>
-    <body>
       <p> Resume:<br>
-      <input type="file" name="resumeFile", accept=".pdf, .doc"/><br>
+      <input type="file" name="resumeFile", accept=".pdf, .doc" value="<?= $file ?>"><br>
+      <span class="underline"></span>
       <span class="error"><?= $file_error ?></span></p>
-      <p> First Name:<br>
-      <input placeholder="First" type="text" name="firstname">
+      <p>
+      <input class= "input" placeholder="First" type="text" name="firstname" value="<?= $firstname ?>"><br>
+      <span class="underline"></span>
       <span class="error"><?= $firstname_error ?></span></p>
-      <p> Last Name:<br>
-      <input placeholder="Last" type="text" name="lastname">
+      <p>
+      <input class = "input" placeholder="Last" type="text" name="lastname" value="<?= $lastname ?>"><br>
+      <span class="underline"></span>
       <span class="error"><?= $lastname_error ?></span></p>
-      <p> Email:<br>
-      <input placeholder="Your Email" type="text" name="email">
+      <p>
+      <input class= "input" placeholder="Your Email" type="text" name="email" value="<?= $email ?>">
+      <span class="underline"></span>
       <span class="error"><?= $email_error ?></span></p>
       <p><input type="submit" value="Submit">
       <div class="success"><?= $success ?></div></p>
-    </body>
   </form>
 </div>

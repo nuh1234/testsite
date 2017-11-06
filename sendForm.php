@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname = test_input($_POST["firstname"]);
      //if this data isn't letters
     if (!preg_match("/^[a-zA-Z]+$/",$firstname)) {
-      $firstname_error = "Only letters :)";
+      $firstname_error = "Only letters please :)";
     }
   }
   if (empty($_POST["lastname"])) {
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = test_input($_POST["lastname"]);
     //if this data isn't letters
     if (!preg_match("/^[a-zA-Z]+$/",$lastname)) {
-      $lastname_error = "Only letters :)";
+      $lastname_error = "Only letters please :)";
     }
   }
   if (empty($_POST["email"])) {
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   if (empty($_POST["resumeFile"])) {
     $file_error = "Please include your (.doc .pdf) resume";
-
   }else {
     $file = test_input($_POST["resumeFile"]);
   }
@@ -51,11 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($_POST as $key => $value) {
       $message .= "$key: $value\n";
     }
-
     $to = 'nuh.mohamud@gmail.com';
     $subject = "YT Website Submission";
     if(mail($to, $subject, $message)){
       $success = "Application Sent!";
+      $firstname = $lastname = $email = $file = "";
       //Note to self set variables to null on the way out
     }
   }
