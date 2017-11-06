@@ -8,21 +8,23 @@
   </head>
   <form id="contact" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <h1>testing file input build</h1>
-      <p> Resume:<br>
-      <input type="file" name="resumeFile", accept=".pdf, .doc" value="<?= $file ?>"><br>
-      <span class="error"><?= $file_error ?></span></p>
-      <p>
       <div class="wrapper">
         <input class= "input" placeholder="First" type="text" name="firstname" value="<?= $firstname ?>">
-        <span class="underline"></span>
+        <span class="underline"></span><br>
         <span class="error"><?= $firstname_error ?></span></p>
         <p>
         <input class = "input" placeholder="Last" type="text" name="lastname" value="<?= $lastname ?>">
+        <span class="underline"></span><br>
         <span class="error"><?= $lastname_error ?></span></p>
         <p>
         <input class= "input" placeholder="Your Email" type="text" name="email" value="<?= $email ?>">
+        <span class="underline"></span><br>
         <span class="error"><?= $email_error ?></span></p>
-        <p><input type="submit" value="Submit">
+        <p>
+          <input type="file" name="resumeFile", accept=".pdf, .doc" value="<?= $file ?>"><br>
+          <span class="error"><?= $file_error ?></span></p>
+          <input type="submit" value="Apply">
+        <p>
         <div class="success"><?= $success ?></div></p>
       </div>
   </form>
