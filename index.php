@@ -7,32 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Application Page</title>
 </head>
-<form>
+<form name = "Application" onsubmit="return checkMajorTwo()">
   <h1>file input build</h1>
   <div class="wrapper">
-    <input type="file" name="resumeFile", accept=".pdf, .doc"><br>
+    Upload your resume <input type="file" name="resumeFile", accept=".pdf, .doc"><br>
     <div>
-      <input class= "input" placeholder="First" type="text" name="firstname">
+      <input class= "input" placeholder="First" type="text" id = "firstname">
       <span class="underline"></span>
-      <input class = "input" placeholder="Last" type="text" name="lastname">
+      <input class = "input" placeholder="Last" type="text" id = "lastname">
       <span class="underline"></span>
     </div>
 
-    <input class= "input" placeholder="Permanent Address" type="text" name="address">
+    <input class= "input" placeholder="Permanent Address" type="text" id = "address">
     <span class="underline"></span><br>
-    <input class= "input" placeholder="Email Address" type="text" name="email">
+    <input class= "input" placeholder="Email Address" type="text" id ="email">
     <span class="underline"></span><br>
-    <input class= "input" placeholder="Phone ex: (555)-555-5555" type="text" name="phonenumber">
+    <input class= "input" placeholder="Phone ex: (555)-555-5555" type="text" id ="phonenumber">
     <span class="underline"></span><br>
-    <input class= "input" placeholder="School Name" type="text" name="schoolname">
+    <input class= "input" placeholder="School Name" type="text" id ="schoolname">
     <span class="underline"></span><br>
 
     <div>
       <h4>Major/s or Intended Major/s</h4>
 
       <label name="PrimaryMajor"> Primary</label>
-      <select name="selectMajor1" onchange="showOtherBox(this.options[this.selectedIndex].value)">
-        <option value="CS">ComSci/Com Eng</option>
+      <select name="selectMajor1" id = "primarymajor" onchange="showOtherBox(this.options[this.selectedIndex].value)">
+        <option value="CS">Computer: Science or Engineering</option>
         <option value="EE">Electrical Engineering</option>
         <option value="HCI">Human Computer Interaction</option>
         <option value="Other">Other</option>
@@ -40,8 +40,8 @@
       <div id ="OtherBox"></div>
 
       <label name="SecondaryMajor"> Secondary</label>
-      <select name="selectMajor2" onchange="showOtherBox2(this.options[this.selectedIndex].value)">
-        <option value="CS">ComSci/Com Eng</option>
+      <select name="selectMajor2" id = "secondarymajor" onchange="showOtherBox2(this.options[this.selectedIndex].value)">
+        <option value="CS">Computer: Science or Engineering</option>
         <option value="EE">Electrical Engineering</option>
         <option value="HCI">Human Computer Interaction</option>
         <option value="Other">Other</option>
@@ -52,15 +52,18 @@
 
     <h5>Year in School during 2017-2018</h5>
 
-    <input type="radio" name="YearInSchool" value="Freshman"> Freshman
-    <input type="radio" name="YearInSchool" value="Freshman"> Sophomore <br>
+    <input type="radio" name = "Year" id = "YearInSchool" value="Freshman"> Freshman
+    <input type="radio" name = "Year" id = "YearInSchool" value="Sophomore"> Sophomore <br>
 
-      <h5>Have you completed Introduction to Computer Science or an equivalent course?</h5>
-      <form onclick = "showCourseTextBox()">
-      <input type="radio" name="CompletedCSCourse" value="Yes"> Yes
-      <input type="radio" name="CompletedCSCourse" value="No"> No
-      <div id ="CompletedCourseBox"></div>
-    </form>
+    <h5>Have you completed Introduction to Computer Science or an equivalent course?</h5>
+    <input type="radio" name = "CompletedCSCourse" value="Yes" id = "csYes" onclick="showCourseTextBox()"> Yes
+    <input type="radio" name = "CompletedCSCourse" value="No" id = "csNo" onclick="showCourseTextBox()"> No
+    <div id ="CompletedCourseBox"></div>
+
+    <h5>Have you completed College Algebra or an equivalent course?</h5>
+    <input type="radio" name = "Math" id = "CompletedMathCourse" value="Yes"> Yes
+    <input type="radio" name = "Math" id = "CompletedMathCourse" value="No"> No
+
 
     <h4>Optional Demographics:</h4>
 
@@ -83,5 +86,5 @@
     <div>
       <input type="submit" value="Apply" id="submitHover">
     </div>
-</div>
+  </div>
 </form>
