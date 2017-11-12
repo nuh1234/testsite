@@ -163,7 +163,7 @@ function checkFileUploaded() {
     alert("Please attach file");
     return false;
   }
-  return file;
+  return file.files[0];
 }
 //These 4 functions below make text boxes appear
 function showOtherBox(name) {
