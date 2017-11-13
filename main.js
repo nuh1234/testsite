@@ -1,64 +1,66 @@
+function validateForm() {
+  return checkFileUploaded() && checkFirstName() && checkLastName() && checkAddress() && checkEmail() && checkPhone() && checkSchool() &&
+  checkMajorOne() && checkMajorTwo() && checkYearInSchool() && checkCSCourse() && checkMathCourse() && getRace() && getGender();
+}
 
-var firstnameError = "Hello W";
-var lastnameError = "";
-var addressError = "";
-var emailError = "";
-var phoneError = "";
-var schoolError = "";
-var yearError = "";
-var csCourseError = "";
-var mathCourseError = "";
+
 function checkFirstName() {
   var firstName = document.getElementById('firstname').value;
   if(firstName == "" || !/^[a-zA-Z ]*$/.test(firstName) || !firstName.replace(/\s/g, '').length) {
-    alert("Name must be filled out");
+    document.getElementById('firstnameError').innerHTML = "Please enter your first name";
     return false;
   }
+  document.getElementById('firstnameError').innerHTML = "";
   return firstName;
 }
 
 function checkLastName() {
   var lastName = document.getElementById('lastname').value;
   if(lastName == "" || !/^[a-zA-Z ]*$/.test(lastName) || !lastName.replace(/\s/g, '').length) {
-    alert("Last Name must be filled out");
+    document.getElementById('lastnameError').innerHTML = "Please enter your last name";
     return false;
   }
+  document.getElementById('lastnameError').innerHTML = "";
   return lastName;
 }
 
 function checkAddress() {
   var address = document.getElementById('address').value;
   if(address == "" || !address.replace(/\s/g, '').length) {
-    alert("Address must be filled out");
+    document.getElementById('addressError').innerHTML = "Address must be filled out";
     return false;
   }
+  document.getElementById('addressError').innerHTML = "";
   return address;
 }
 
 function checkEmail() {
   var email = document.getElementById('email').value;
   if(email == "" || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-    alert("Email Address must be filled out");
+    document.getElementById('emailError').innerHTML = "Please enter a valid email";
     return false;
   }
+  document.getElementById('emailError').innerHTML = "";
   return email;
 }
 
 function checkPhone() {
   var phoneNumber = document.getElementById('phonenumber').value;
   if(phoneNumber == "" || !/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/.test(phoneNumber)) {
-    alert("Please enter a valid phone number");
+    document.getElementById('phoneError').innerHTML = "Please enter a valid phone number";
     return false;
   }
+  document.getElementById('phoneError').innerHTML = "";
   return phoneNumber;
 }
 
 function checkSchool() {
   var school = document.getElementById('schoolname').value;
   if(school == "" || !school.replace(/\s/g, '').length) {
-    alert("Please enter a school");
+    document.getElementById('schoolError').innerHTML = "Please enter a school";
     return false;
   }
+  document.getElementById('schoolError').innerHTML = "";
   return school;
 }
 
@@ -67,9 +69,10 @@ function checkMajorOne() { //If the major is other, I also check the other input
   if(major == "Other") {
     var otherInput = document.getElementById('majorOne').value;
     if(otherInput == "" || !otherInput.replace(/\s/g, '').length) {
-      alert("Please finish");
+      document.getElementById('majorOneError').innerHTML = "Please enter other major";
       return false;
     }
+    document.getElementById('majorOneError').innerHTML = "";
     return otherInput;
   }
   return major;
@@ -80,24 +83,25 @@ function checkMajorTwo() {
   if(major == "Other") {
     var otherInput = document.getElementById('majorTwo').value;
     if(otherInput == "" || !otherInput.replace(/\s/g, '').length) {
-      alert("Please finish");
+      document.getElementById('majorTwoError').innerHTML = "Please enter other major";
       return false;
     }
+    document.getElementById('majorTwoError').innerHTML = "";
     return otherInput;
   }
   return major;
 }
 
-function checkYearInSchool() { //radio values have to be extracted from an array :/
-  var year = document.getElementsByName('Year');
+function checkYearInSchool() { //radio values have to be extracted from an array  :/
+  var year = document.getElementsByName('Year');//I could use a loop, but there will always be two values here
   if(year[0].checked) {
-    alert(year[0].value);
+    document.getElementById('yearError').innerHTML = "";
     return year[0].value;
   }else if (year[1].checked) {
-    alert(year[1].value);
+    document.getElementById('yearError').innerHTML = "";
     return year[1].value;
   }
-  alert("Select a year");
+  document.getElementById('yearError').innerHTML = "Select a year";
   return false;
 }
 
@@ -106,29 +110,29 @@ var csRadio = document.getElementsByName('CompletedCSCourse');
 if(csRadio[0].checked) {
   var courseName = document.getElementById('OtherCourse').value;
   if (courseName == "" || !courseName.replace(/\s/g, '').length) {
-    alert("Please enter CS course name");
+    document.getElementById('csCourseError').innerHTML = "Please enter CS course name";
     return false;
   }
-  alert(courseName);
+  document.getElementById('csCourseError').innerHTML = "";
   return courseName;
 }else if (csRadio[1].checked) {
-  alert(csRadio[1].value);
+  document.getElementById('csCourseError').innerHTML = "";
   return csRadio[1].value;
 }
-alert("Select Yes or No for CS course");
+document.getElementById('csCourseError').innerHTML = "Select Yes or No for CS course";
 return false;
 }
 
 function checkMathCourse() {
   var mathRadio = document.getElementsByName('Math');
   if(mathRadio[0].checked) {
-    alert(mathRadio[0].value);
+    document.getElementById('mathCourseError').innerHTML = "";
     return mathRadio[0].value;
   }else if (mathRadio[1].checked) {
-    alert(mathRadio[1].value);
+    document.getElementById('mathCourseError').innerHTML = "";
     return mathRadio[1].value;
   }
-  alert("Select a math course");
+  document.getElementById('mathCourseError').innerHTML = "Select a math course";
   return false;
 }
 
@@ -152,16 +156,17 @@ function getRace() {
       if(boxes[i].value == "Other") {
         var other = document.getElementById('otherRace').value;
         if(other == "" || !other.replace(/\s/g, '').length) {
-          alert("Please enter text");
+          document.getElementById('otherRaceError').innerHTML = "Please enter text";
           return false;
         }
+        document.getElementById('otherRaceError').innerHTML = "";
         race.push(other);
       } else {
+        document.getElementById('otherRaceError').innerHTML = "";
         race.push(boxes[i].value);
       }
     }
   }
-  alert(race.toString());
   //Api might want all strings, in that case return race.toString();
   return race;
 }
@@ -169,9 +174,10 @@ function getRace() {
 function checkFileUploaded() {
   var file = document.getElementById('file');
   if(!file.files.length) {
-    alert("Please attach file");
+    document.getElementById('fileError').innerHTML = "Please attach file";
     return false;
   }
+  document.getElementById('fileError').innerHTML = "";
   return file.files[0];
 }
 //These 4 functions below make text boxes appear
