@@ -13,7 +13,8 @@
     Upload your resume <input type="file" id = "file" name="resumeFile", accept = ".pdf, .doc"><br>
     <div>
       <input class= "input" placeholder="First" type="text" id = "firstname">
-      <span class="underline"></span>
+      <span class="underline"></span><br>
+      <span class="error" id = "firstnameError"></span>
       <input class = "input" placeholder="Last" type="text" id = "lastname">
       <span class="underline"></span>
     </div>

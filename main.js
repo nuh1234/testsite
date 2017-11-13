@@ -1,4 +1,13 @@
 
+var firstnameError = "Hello W";
+var lastnameError = "";
+var addressError = "";
+var emailError = "";
+var phoneError = "";
+var schoolError = "";
+var yearError = "";
+var csCourseError = "";
+var mathCourseError = "";
 function checkFirstName() {
   var firstName = document.getElementById('firstname').value;
   if(firstName == "" || !/^[a-zA-Z ]*$/.test(firstName) || !firstName.replace(/\s/g, '').length) {
