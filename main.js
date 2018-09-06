@@ -174,7 +174,7 @@ function getRace() {
 function checkFileUploaded() {
   var file = document.getElementById('file');
   if(!file.files.length) {
-    document.getElementById('fileError').innerHTML = "Please attach file";
+    document.getElementById('fileError').innerHTML = "Please attach a resume";
     return false;
   }
   document.getElementById('fileError').innerHTML = "";

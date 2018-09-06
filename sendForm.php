@@ -1,3 +1,4 @@
+//An Example of form validation using PHP
 <?php
 $firstname_error = "";
 $lastname_error = "";
